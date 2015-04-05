@@ -233,10 +233,12 @@ sub read_proc_net_dev {
     return $res if !$fh;
 
     while (defined (my $line = <$fh>)) {
-	if ($line =~ m/^\s*(.*):\s*(\d+)\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+(\d+)\s+/) {
+	if ($line =~ m/^\s*(.*):\s*(\d+)\s+(\d+)\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+(\d+)\s+(\d+)\s+/) {
 	    $res->{$1} = {
 		receive => $2,
-		transmit => $3,
+        	receivepkts => $3,
+		transmit => $4,
+        	transmitpkts => $5,
 	    };
 	}
     }
