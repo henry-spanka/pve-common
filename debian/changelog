@@ -1,3 +1,9 @@
+libpve-common-perl (3.0-23) unstable; urgency=low
+
+  * implement packets accounting for node interfaces including tap devices
+
+ -- Henry Spanka - myVirtualserver <henry@myvirtualserver.de>  Sun, 05 Apr 2015 15:12:36 +0200
+
 libpve-common-perl (3.0-22) unstable; urgency=low
 
   * implement pre-fork daemon
