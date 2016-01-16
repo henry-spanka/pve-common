@@ -121,11 +121,11 @@ sub read_proc_stat {
 	$res->{cpu} = $useddiff/$diff;
 	my $waitdiff =  $res->{iowait} - $last_proc_stat->{iowait};
 	$waitdiff = $diff if $waitdiff > $diff;
-	$res->{wait} = $waitdiff/$diff;
+	$res->{wait} = sprintf("%.10f", $waitdiff/$diff); # Round to avoid exponential values
 	$last_proc_stat = $res;
     } else {
 	$res->{cpu} = $last_proc_stat->{cpu};
-	$res->{wait} = $last_proc_stat->{wait};
+	$res->{wait} = sprintf("%.10f", $last_proc_stat->{wait}); # Round to avoid exponential values
     }
 
     return $res;
