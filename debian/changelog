@@ -1,3 +1,9 @@
+libpve-common-perl (3.0-24) unstable; urgency=low
+
+  * avoid exponential values because graphite only accepts numeric/floating values
+
+ -- Henry Spanka - myVirtualserver <henry@myvirtualserver.de>  Wed, 27 Jan 2016 14:50:22 +0100
+
 libpve-common-perl (3.0-23) unstable; urgency=low
 
   * implement packets accounting for node interfaces including tap devices
